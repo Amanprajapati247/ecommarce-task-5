@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ApexMart - Home</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="cart.html">Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="featured">
+        <h1>Welcome to ApexMart</h1>
+        <div class="carousel">
+            <div class="carousel-images" id="carouselImages">
+                <!-- Images will be loaded dynamically -->
+            </div>
+        </div>
+        <div class="nav-buttons">
+            <button onclick="prevImage()">Previous</button>
+            <button onclick="nextImage()">Next</button>
+        </div>
+    </section>
+    <script src="script.js"></script>
+    <script>
+        // Fetch featured products for carousel
+        fetch('https://fakestoreapi.com/products?limit=3')
+            .then(res => res.json())
+            .then(data => {
+                const carousel = document.getElementById('carouselImages');
+                data.forEach(product => {
+                    const img = document.createElement('img');
+                    img.src = product.image;
+                    img.alt = product.title;
+                    img.loading = 'lazy';
+                    carousel.appendChild(img);
+                });
+                images = document.querySelectorAll('.carousel-images img'); // Update images array
+                totalImages = images.length;
+            });
+    </script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f4f8;
+    color: #333;
+}
+header {
+    background-color: #28a745;
+    padding: 1em;
+}
+nav ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+nav ul li {
+    display: inline;
+    margin-right: 15px;
+}
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+section {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.carousel {
+    width: 80%;
+    margin: 20px auto;
+    overflow: hidden;
+    border: 2px solid #28a745;
+    border-radius: 8px;
+}
+.carousel-images {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+.carousel-images img {
+    width: 100%;
+    height: auto;
+}
+.nav-buttons {
+    text-align: center;
+}
+.nav-buttons button, #product-app button, #cart-app button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.nav-buttons button:hover, #product-app button:hover, #cart-app button:hover {
+    background-color: #218838;
+}
+#productList li, #cartList li {
+    list-style: none;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#productList li img {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+}
+.add-to-cart {
+    background-color: #ffc107;
+    color: black;
+}
+.add-to-cart:hover {
+    background-color: #e0a800;
+}
+@media (max-width: 600px) {
+    .carousel {
+        width: 100%;
+    }
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+    section {
+        margin: 10px;
+    }
+    #productList li {
+        flex-direction: column;
+        text-align: center;
+    }
+}
